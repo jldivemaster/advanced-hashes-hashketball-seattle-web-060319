@@ -216,5 +216,5 @@ def big_shoe_rebounds()
   end
 
   new_arr = shoe_reb_hash.sort_by{ |k, v| k }
-  return new_arr[-1]
+  return new_arr[-1][1]
 end
