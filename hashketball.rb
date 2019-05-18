@@ -199,3 +199,22 @@ def player_stats(string)
     end
   end
 end
+
+def big_shoe_rebounds()
+  shoe_reb_hash = {}
+  
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |name, player_data|
+          player_data.each do |k, v|
+            shoe_reb_hash[player_data[:shoe]] = player_data[:rebounds]
+          end
+        end
+      end
+    end
+  end
+
+  new_arr = shoe_reb_hash.sort_by{ |k, v| k }
+  return new_arr[-1]
+end
