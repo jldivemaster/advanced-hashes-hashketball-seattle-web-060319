@@ -176,7 +176,7 @@ def player_numbers(string)
       team_data.each do |attribute, data|
         if attribute == :players
           data.each do |name, player_data|
-            array << player_data[:number] 
+            array << player_data[:number]
           end
         end
       end
