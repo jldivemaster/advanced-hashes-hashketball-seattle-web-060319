@@ -171,6 +171,18 @@ end
 def player_numbers(string)
   array = []
 
+  game_hash.each do |location, team_data|
+    if team_data[:team_name] == string
+      team_data.each do |attribute, data|
+        if attribute == :players
+          data.each do |name, player_data|
+            array << player_data[:number] 
+          end
+        end
+      end
+    end
+  end
+
   return array
 end
 
